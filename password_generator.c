@@ -3,10 +3,10 @@
 #include <string.h>
 #include <time.h>
 
-#define LOWER "abcdefghijklmnopqrstuvwxyz"
-#define UPPER "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-#define DIGITS "0123456789"
 #define SPECIAL "!@#$%^&*()-_=+[]{}|;:'\",.<>?/"
+#define DIGITS "0123456789"
+#define UPPER "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+#define LOWER "abcdefghijklmnopqrstuvwxyz"
 
 void generatePassword(int length, int useLower, int useUpper, int useDigits, int useSpecial) {
     char pool[256] = "";
@@ -56,7 +56,7 @@ int main() {
     printf("Include special characters? (1 for Yes, 0 for No): ");
     scanf("%d", &useSpecial);
 
-    srand(time(NULL)); // Move srand to main()
+    srand(time(NULL));
 
     generatePassword(length, useLower, useUpper, useDigits, useSpecial);
 
